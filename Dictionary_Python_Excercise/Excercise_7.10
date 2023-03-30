@@ -1,0 +1,23 @@
+#  Python Crash_Course Eric Matthes, excercise_7.10 
+dream_holidays = {}
+print("---Polling - Dream Holidays---")
+polling_active = True
+while polling_active:
+    doubled_name = True
+    while doubled_name:
+        name = input('\nInput name:\t')
+        if name in dream_holidays:
+            print("Użytkownik " + name.upper() + " this user already sent the answer\
+            \nChose one special mark in your name.")
+        else:
+            doubled_name = False
+            response = input("\nYour dreams holidays:\t")
+            dream_holidays[name] = response
+            repeat = input("\nDo someone else want to send the response?\
+            \nChoose Y - Yes, lub N - No:\t").upper()
+            if repeat == 'N':
+                polling_active = False
+print("---Polling - Results---")
+for name, response in dream_holidays.items():
+    print("\nDream holidays: " + name.title() + "'s is " +
+          dream_holidays[name].title() + ".")
