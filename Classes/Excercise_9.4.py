@@ -17,7 +17,6 @@ class User:  # Only one class in script = Y haven't use para
     def great_user(self):
         """Welcome every user"""
         print("\tNice to see you back, dear " + self.name.upper())
-        print("\tYou've logged a " + str(self.login_attempts) + " times!")
 
     def login_counts(self):
         """Show input counts"""
@@ -34,13 +33,13 @@ class User:  # Only one class in script = Y haven't use para
 
 my_user = User('first', 'last', 'job', 'city')  # how to input user_info
 my_user.describe_user()
-my_user.great_user()
+my_user.login_counts()
 my_user.increment_login_attempts()
 my_user.increment_login_attempts()
-my_user.great_user()
+my_user.login_counts()
 my_user.increment_login_attempts()
 my_user.increment_login_attempts()
 my_user.increment_login_attempts()
-my_user.great_user()
+my_user.login_counts()
 my_user.reset_login_attempts()
-my_user.great_user()
+my_user.login_counts()
