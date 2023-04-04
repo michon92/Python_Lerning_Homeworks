@@ -31,8 +31,20 @@ class Car():
 class ElectricCar(Car):
     """Przedstawia cechy charakterystyczne samochodu eletrycznego"""
     def __init__(self, make, model, year):
-        """Inicjalizacja atrybutów klasy nadrzędnej"""
+        """
+        Inicjalizacja atrybutów klasy nadrzędnej
+        Następnie inicijalizacja atrybutów charakterystycznych dla
+        samochodu eletrycznego,
+        """
         super().__init__(make, model, year)
+        self.battery_size = 70
+
+    def describe_battery(self):
+        """Wyświetla info o wielkości zainstalowanego akumulatora"""
+        print("\tTen samochód ma akumulator o pojemności " + 
+              str(self.battery_size) + " kWh.")
+
 
 my_tesla = ElectricCar('tesla', 'model s', 2016)
 print(my_tesla.get_descriptive_name())
+my_tesla.describe_battery()
