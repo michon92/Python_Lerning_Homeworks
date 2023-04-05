@@ -8,18 +8,16 @@ class Car():
         self.odometer_reading =250000  # początkowa wartość przebiegu 
         self.tank_range = 700
 
-
     def get_descriptive_name(self):
         """Zwrot elegancko sformatowanego opisu samochodu"""
         long_name = str(self.year) + ' ' + self.make + ' ' + self.model
         return long_name.title()
     
-
     def road_odometer(self):
         """Wyświetla info o przebiegu samochodu"""
-        print("\tTen samochód ma przejechane " + str(self.odometer_reading) + " km.")
+        print("\tTen samochód ma przejechane " + 
+              str(self.odometer_reading) + " km.")
 
-    
     def update_odometer(self, mileage):
         """Przypisanie danej wartości licznikowi przebiegu auta.
         Zmiana zostanie odrzócona w przypadku próby cofnięcia licznika!
@@ -32,8 +30,7 @@ class Car():
     def fill_gas_tank(self):
         print("Fuell range " + str(self.tank_range))
         
-    
-
+        
 class ElectricCar(Car):
     """Przedstawia cechy charakterystyczne samochodu eletrycznego"""
     def __init__(self, make, model, year):
@@ -52,15 +49,16 @@ class ElectricCar(Car):
         
     def fill_gas_tank(self):
         """Samochód o napędzie el. nie ma zbiornika paliwa"""
-        print("Ten samochó nie wymaga tankowania paliwa!")
-
+        print("\tTen samochó nie wymaga tankowania paliwa!\n")
 
 
 my_tesla = ElectricCar('tesla', 'model s', 2016)
 print(my_tesla.get_descriptive_name())
 my_tesla.describe_battery()
+my_tesla.tank_range = 300
 my_tesla.fill_gas_tank()
 
 my_bmw = Car('bmw', 'e87', 2009)
 print(my_bmw.get_descriptive_name())
+my_bmw.tank_range =500
 my_bmw.fill_gas_tank()
