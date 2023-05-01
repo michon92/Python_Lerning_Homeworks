@@ -12,6 +12,6 @@ def count_words(filename):
         print(f"Plik {filename} zawiera {num_words} słów.")
 
 
-filenames = ['alice.txt', 'moby_dick.txt', 'little_women.txt']
+filenames = ['anna_wikipedia.txt']
 for filename in filenames:
     count_words(filename)
